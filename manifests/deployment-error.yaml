@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment-error
+  labels:
+    app: error
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: error
+  template:
+    metadata:
+      labels:
+        app: error
+    spec:
+      containers:
+      - name: foo
+        image: local-registry.shaka.xyz/myimage:floating-tag
+        imagePullPolicy: Always
+        env:
+          - name: EXIT_CODE
+            value: "1"

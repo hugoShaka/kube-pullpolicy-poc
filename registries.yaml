@@ -1,0 +1,4 @@
+mirrors:
+  local-registry.shaka.xyz:
+    endpoint:
+      - "http://local-registry.shaka.xyz:5000"
